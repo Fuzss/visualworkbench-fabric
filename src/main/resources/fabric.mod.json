@@ -35,6 +35,6 @@
     "fabric": ">=${minFabricApiVersion}",
     "puzzleslib": ">=${minPuzzlesVersion}",
     "minecraft": ">=${minMinecraftVersion} <${nextMinecraftVersion}",
-    "java": ">=17"
+    "java": ">=16"
   }
 }
