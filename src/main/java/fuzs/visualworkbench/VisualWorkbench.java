@@ -6,13 +6,13 @@ import fuzs.puzzleslib.config.ConfigHolderImpl;
 import fuzs.visualworkbench.config.ClientConfig;
 import fuzs.visualworkbench.registry.ModRegistry;
 import net.fabricmc.api.ModInitializer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VisualWorkbench implements ModInitializer {
     public static final String MOD_ID = "visualworkbench";
     public static final String MOD_NAME = "Visual Workbench";
-    public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
     @SuppressWarnings("Convert2MethodRef")
     public static final ConfigHolder<ClientConfig, AbstractConfig> CONFIG = ConfigHolder.client(() -> new ClientConfig());
