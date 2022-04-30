@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.gui.screens.inventory.CraftingScreen;
 
 public class VisualWorkbenchClient implements ClientModInitializer {
+
     @Override
     public void onInitializeClient() {
         onClientSetup();
