@@ -36,21 +36,20 @@ dependencies {
 
 	modImplementation "net.fabricmc:fabric-loader:${project.fabricVersion}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabricApiVersion}"
-	modImplementation "net.minecraftforge:ForgeConfigAPIPort:v3.2.0-1.18.2-Fabric"
 	modImplementation "com.terraformersmc:modmenu:3.1.0"
-	// same version as used on Forge, although this will be overwritten when another mod supplies a more recent one
-	implementation(include('com.electronwill.night-config:core:3.6.3'))
-	implementation(include('com.electronwill.night-config:toml:3.6.3'))
 
-	// only entity module is used, and we'll probably only ever need that single one
-	// but just in case all the others can easily be enabled (the code for supporting them is also there)
-	// also since those are included better keep jar size small
-	modImplementation(include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:4.1.4"))
-//	modImplementation(include("dev.onyxstudios.cardinal-components-api:cardinal-components-item:4.1.4"))
-	modImplementation(include("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:4.1.4"))
-//	modImplementation(include("dev.onyxstudios.cardinal-components-api:cardinal-components-block:4.1.4"))
-//	modImplementation(include("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:4.1.4"))
-//	modImplementation(include("dev.onyxstudios.cardinal-components-api:cardinal-components-world:4.1.4"))
+	// all those dependencies are required by Puzzles Lib, make sure to not include them here, Puzzles does that
+	// we also need to exclude these dependencies via the fabric_loader_dependencies.json file,
+	// as defining those dependencies here does not seem to count as the mods being properly present
+	modImplementation "net.minecraftforge:ForgeConfigAPIPort:v3.2.0-1.18.2-Fabric"
+	implementation "com.electronwill.night-config:core:3.6.3"
+	implementation "com.electronwill.night-config:toml:3.6.3"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:4.1.4"
+//	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-item:4.1.4"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:4.1.4"
+//	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-block:4.1.4"
+//	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:4.1.4"
+//	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-world:4.1.4"
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.0.442"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:8.0.442"
